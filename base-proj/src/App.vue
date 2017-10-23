@@ -5,7 +5,15 @@
       <main>
         <v-content>
           <v-container fluid>
-            <router-view></router-view>
+            <v-layout row wrap>
+              <v-flex xs12>
+                <v-card dark >
+                  <v-card-title class="px-0">Page Title</v-card-title>
+                  <v-card-text class="px-0">Subtitle</v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+            <router-view/>
           </v-container>
         </v-content>
       </main>
@@ -24,8 +32,7 @@
       topBar, sidebarNav, appFooter
     },
     data: () => ({
-      dialog: false,
-      drawer: true
+
     })
   }
 </script>
