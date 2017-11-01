@@ -1,13 +1,14 @@
 <template>
-    <v-footer fixed>
+    <v-footer :fixed="fixed" app>
       <span>&copy; 2017</span>
-    </v-footer>    
+    </v-footer>
 </template>
 
 <script>
   export default {
     name: 'appFooter',
     data: () => ({
+      fixed: true
     })
   }
 </script>

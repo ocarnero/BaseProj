@@ -1,24 +1,37 @@
 <template>
-  <v-navigation-drawer permanent clipped-left app clipped enable-resize-watcher>
-    <v-list dense>
-      <v-layout row align-center>
-            <v-flex xs6>
-              <v-subheader>
-                Clients
-              </v-subheader>
-            </v-flex>
-            <v-flex xs6 class="text-xs-center">
-              <router-link to="/clients">Clients</router-link>
-            </v-flex>
-          </v-layout>
-    </v-list>
-  </v-navigation-drawer>
+    <v-navigation-drawer
+      persistent
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      v-model="drawer"
+      enable-resize-watcher
+      app>
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>Menu</v-list-tile-title>
+            <router-link
+              value="true"
+              v-for="(item, i) in items"
+              :key="i"
+              :to="item.route">{{item.title}}</router-link>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script>
   export default {
     name: 'sidebar-nav',
     data: () => ({
+      clipped: true,
+      miniVariant: false,
+      drawer: true,
+      items: [
+          { icon: 'bubble_chart', title: 'Home', route: '/' },
+          { icon: 'bubble_chart', title: 'Clients', route: '/clients' }
+      ]
     })
   }
 </script>

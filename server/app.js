@@ -17,6 +17,6 @@ app.use('/graphql', graphqlHTTP(req => ({
 mongoose.connect('mongodb://localhost:27017/graphql');
 
 // start server
-var server = app.listen(8080, () => {
+var server = app.listen(8081, () => {
   console.log('Listening at port', server.address().port);
 });

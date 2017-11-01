@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import clients from '@/components/app/clients'
+import loginForm from '@/components/login-form'
 
 Vue.use(Router)
 
@@ -14,8 +14,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Hello',
-      component: HelloWorld
+      name: 'loginForm',
+      component: loginForm
     }
   ]
 })
